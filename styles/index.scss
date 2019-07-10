@@ -1,0 +1,282 @@
+// TO DO
+// Correct title font
+// Custom Crawls
+// Bold crawl text not working on safari
+// Correct line endings, including for title
+  // https://starwars.fandom.com/wiki/Opening_crawl
+// Complete mobile optimisation
+// Add music
+// Correct logo speed and timing,
+  // Perhaps play then pause music until correct time.
+// Custom select views
+// Refactor code
+// Reverse animation for replay button on mouse leave,
+  // If mouse leave before animation ends, must only reverse animation from that point. Very Tricky.
+// Ensure everything onload before continuing
+// Add more space between title and start of storyline
+// allow esc for stop
+// jittery Animations
+// Top fade is shown over menu in safari ios
+// bottom border does not hide crawl text in safari
+// Canvas not showing in safari ios
+// Crawl text too fast for portrait mode on mobile, and text fades away before music ends
+// music ends abruptly
+// overflow-x: hidden does not prevent scroll in mobile.
+// Custom select box
+
+@import 'mixins';
+@import 'variables';
+@import 'animations';
+
+// GENERAL
+html,body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  background: black;
+  overflow: hidden;
+}
+
+.starWars {
+  overflow: hidden;
+}
+
+.form {
+  border: 5px solid $gold;
+  position: absolute;
+  font-family: 'News Gothic Regular', sans-serif;
+  padding: 20px;
+  color: white;
+  width: 60%;
+  max-width: 500px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-weight: bold;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    select {
+      background: black;
+      border: 1px solid $gold;
+      color: $gold;
+      font-weight: bold;
+      margin: 10px 0 15px 0;
+      width: 250px;
+      height: 2rem;
+      cursor: pointer;
+
+      &:focus, &:hover {
+        outline: none;
+        box-shadow: 0px 0px 10px 2px $gold;
+      }
+      &:hover {
+        background: #494949;
+      }
+    }
+
+    button {
+      background: black;
+      color: $spaceCyan;
+      border-color: $spaceCyan;
+      border-radius: 35%;
+      font-weight: bold;
+
+      &:focus {
+        outline: none;
+        // border: 3px solid $gold;
+        box-shadow: 0px 0px 10px 1px $spaceCyan;
+      }
+
+      p {
+        margin: 0;
+        padding: 10%;
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 10px 1px $spaceCyan;
+        background: #494949;
+        cursor: pointer;
+      }
+    }
+  }
+
+  h1 {
+    color: $gold;
+  }
+
+  label {
+    color: $spaceCyan;
+  }
+}
+
+// INTRO
+.opening {
+  @include centreScreen();
+
+  color: $spaceCyan;
+  font-family: "News Gothic Light", sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  // font-size: 2rem; /* JS */
+
+  &.start {
+    animation: opening $ani1 linear $delay1;
+  }
+}
+
+.logo {
+  @include centreScreen();
+
+  &.start {
+    img {
+      animation: logo $ani2 cubic-bezier(0.165, 0.84, 0.44, 1) $delay2;
+    }
+  }
+}
+
+// MAIN
+.main {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform-origin: 50% 100%;
+  // transform: perspective(150px) rotateX(21deg);
+  // For narrowr screens, JS reduce rotateX
+
+  // 450 =   transform: perspective(150px) rotateX(20deg);
+
+
+  // Font
+  font-family: "News Gothic", sans-serif;
+  color: $gold;
+  // Blurr text using box shadow on older movies at least
+  // try to made background and text look grainy too.
+}
+
+.crawl {
+  position: relative;
+  top: 100%;
+
+  &.start {
+    visibility: hidden;
+    animation: crawl $ani3 linear $delay3;
+  }
+
+  .heading {
+    text-align: center;
+    // font-size: 4rem; /* JS */
+    letter-spacing: 2px;
+    font-family: 'News Gothic Regular', sans-serif;
+    font-weight: bold;
+
+    .episode {
+      margin: 0;
+      transform-origin: 50% 50%;
+      transform: rotateX(-60deg);
+    }
+
+    .title {
+      margin-top: 0;
+    }
+  }
+
+  .storyline {
+    font-family: 'News Gothic Demi Regular', sans-serif;
+    text-align: justify;
+    // font-size: 3.5rem; /* JS */
+    letter-spacing: 4px;
+    line-height: 1.7;
+    width: 100%;
+    transform-origin: 50% 0%;
+    transform: rotateX(-50deg);
+  }
+}
+
+// EXTRAS?
+
+.a {
+  width: 100%;
+  position: absolute;
+}
+
+.fade {
+  top: 0;
+  height: 100%;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 15%,
+      rgba(0, 0, 0, 0.5) 45%,
+      rgba(0, 0, 0, 0) 65%
+    );
+}
+
+.base {
+  bottom: -195%;
+  height: 200%;
+  background: black;
+}
+
+
+#canvas {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+// Replay button
+
+.replay {
+  // border: 3px solid red;
+  color: $gold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  font-size: 1.5rem;
+  font-family: 'News Gothic Regular', sans-serif;
+  visibility: hidden;
+
+  &.start {
+    animation: hide $delay4;
+    visibility: visible;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: auto;
+    margin-right: 0.5rem;
+
+    &.action {
+      animation: replay 0.5s linear;
+      transform: rotateZ(360deg);
+    }
+
+    // &.reverse {
+    //   animation: reverse 0.2s reverse;
+    //   // transform: rotateZ(-180deg);
+    // }
+  }
+}

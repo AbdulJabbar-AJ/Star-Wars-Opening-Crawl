@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Star Wars Crawl</title>
+  </head>
+
+  <body>
+    <canvas id="canvas" width="300" height="300"></canvas>
+
+    <div class="starWars">
+
+      <div class="form">
+        <form>
+          <h1>Star Wars Opening Crawl</h1>
+          <label for="">Select movie</label>
+          <select class="selectMovie" name="movie">
+            <optgroup label="The Original Trilogy">
+              <option value="0">Episode IV: A New Hope</option>
+              <option value="1">Episode V: The Empire Strikes Back</option>
+              <option value="2">Episode VI: Return of the Jedi</option>
+            </optgroup>
+
+            <optgroup label="The Prequel Trilogy">
+              <option value="3">Episode I: The Phantom Menace</option>
+              <option value="4">Episode II: Attack of the Clones</option>
+              <option value="5">Episode III: Revenge of the Sith</option>
+            </optgroup>
+
+            <optgroup label="The Sequel Trilogy">
+              <option value="6">Episode VII: The Force Awakens</option>
+              <option value="7">Episode VIII: The Last Jedi</option>
+              <option value="8">Episode Custom: Coming Soon...</option>
+            </optgroup>
+          </select>
+
+          <button type="button" id="submit"><p>PLAY</p></button>
+        </form>
+      </div>
+
+      <div class="intro">
+        <div class="opening">A long time ago in a galaxy far,<br>far away....</div>
+        <div class="logo"><img src="./media/images/logo.svg"></div>
+      </div>
+
+      <div class="main">
+        <div class="crawl">
+          <div class="heading">
+            <p class='episode'>Episode IV</p>
+            <p class='title'>A NEW HOPE</p>
+          </div>
+
+          <div class="storyline">
+            <p class="section">It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
+            <!-- <br> -->
+            <p class="section">During the battle, Rebel spies managed to steal secret plans to the Empire’s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
+            <!-- <br> -->
+            <p class="section">Pursued by the Empire’s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="replay">
+        <img src='./media/images/replay.svg' alt="">
+        <p>Replay</p>
+      </div>
+
+
+      <div class="a fade"></div>
+      <div class="a base"></div>
+
+    </div>
+    <script type="module" src="scripts/canvas.js"></script>
+    <script type="module" src="scripts/data.js"></script>
+    <script type="module" src="scripts/index.js"></script>
+  </body>
+</html>

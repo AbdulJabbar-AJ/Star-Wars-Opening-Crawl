@@ -1,0 +1,422 @@
+@font-face {
+  font-family: "News Gothic";
+  src: url("../media/fonts/News Gothic Bold.ttf");
+}
+@font-face {
+  font-family: "News Gothic Light";
+  src: url("../media/fonts/NewsGothicStd.otf");
+}
+@font-face {
+  font-family: "News Gothic Regular";
+  src: url("../media/fonts/News Gothic Regular.otf");
+}
+@font-face {
+  font-family: "News2";
+  src: url("../media/fonts/News Gothic Std Medium.otf");
+}
+@font-face {
+  font-family: "News3";
+  src: url("../media/fonts/News Gothic Condensed Regular.ttf");
+}
+@font-face {
+  font-family: "News Gothic Demi Regular";
+  src: url("../media/fonts/NewsGothicDemiRegular.otf");
+}
+@font-face {
+  font-family: "News5";
+  src: url("../media/fonts/News Gothic Condensed Bold.otf");
+}
+@-webkit-keyframes opening {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes opening {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes logo {
+  0% {
+    position: relative;
+    visibility: visible;
+    width: 100%;
+    -webkit-transform: scale(1.8, 1.8);
+            transform: scale(1.8, 1.8);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    width: 0%;
+    opacity: 0;
+  }
+}
+@keyframes logo {
+  0% {
+    position: relative;
+    visibility: visible;
+    width: 100%;
+    -webkit-transform: scale(1.8, 1.8);
+            transform: scale(1.8, 1.8);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    width: 0%;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes crawl {
+  0% {
+    visibility: visible;
+    top: 100%;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    top: -1000%;
+  }
+}
+@keyframes crawl {
+  0% {
+    visibility: visible;
+    top: 100%;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    top: -1000%;
+  }
+}
+@-webkit-keyframes hide {
+  0% {
+    visibility: hidden;
+  }
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes hide {
+  0% {
+    visibility: hidden;
+  }
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@-webkit-keyframes replay {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+@keyframes replay {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: black;
+  overflow: hidden;
+}
+
+.starWars {
+  overflow: hidden;
+}
+
+.form {
+  border: 5px solid #daaf41;
+  position: absolute;
+  font-family: 'News Gothic Regular', sans-serif;
+  padding: 20px;
+  color: white;
+  width: 60%;
+  max-width: 500px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+  font-weight: bold;
+}
+.form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.form form select {
+  background: black;
+  border: 1px solid #daaf41;
+  color: #daaf41;
+  font-weight: bold;
+  margin: 10px 0 15px 0;
+  width: 250px;
+  height: 2rem;
+  cursor: pointer;
+}
+.form form select:focus, .form form select:hover {
+  outline: none;
+  -webkit-box-shadow: 0px 0px 10px 2px #daaf41;
+          box-shadow: 0px 0px 10px 2px #daaf41;
+}
+.form form select:hover {
+  background: #494949;
+}
+.form form button {
+  background: black;
+  color: #58e3ec;
+  border-color: #58e3ec;
+  border-radius: 35%;
+  font-weight: bold;
+}
+.form form button:focus {
+  outline: none;
+  -webkit-box-shadow: 0px 0px 10px 1px #58e3ec;
+          box-shadow: 0px 0px 10px 1px #58e3ec;
+}
+.form form button p {
+  margin: 0;
+  padding: 10%;
+}
+.form form button:hover {
+  -webkit-box-shadow: 0px 0px 10px 1px #58e3ec;
+          box-shadow: 0px 0px 10px 1px #58e3ec;
+  background: #494949;
+  cursor: pointer;
+}
+.form h1 {
+  color: #daaf41;
+}
+.form label {
+  color: #58e3ec;
+}
+
+.opening {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  color: #58e3ec;
+  font-family: "News Gothic Light", sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+.opening.start {
+  -webkit-animation: opening 5s linear 1.5s;
+          animation: opening 5s linear 1.5s;
+}
+
+.logo {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+}
+.logo.start img {
+  -webkit-animation: logo 15s cubic-bezier(0.165, 0.84, 0.44, 1) 9s;
+          animation: logo 15s cubic-bezier(0.165, 0.84, 0.44, 1) 9s;
+}
+
+.main {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  font-family: "News Gothic", sans-serif;
+  color: #daaf41;
+}
+
+.crawl {
+  position: relative;
+  top: 100%;
+}
+.crawl.start {
+  visibility: hidden;
+  -webkit-animation: crawl 140s linear 15s;
+          animation: crawl 140s linear 15s;
+}
+.crawl .heading {
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: 'News Gothic Regular', sans-serif;
+  font-weight: bold;
+}
+.crawl .heading .episode {
+  margin: 0;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: rotateX(-60deg);
+          transform: rotateX(-60deg);
+}
+.crawl .heading .title {
+  margin-top: 0;
+}
+.crawl .storyline {
+  font-family: 'News Gothic Demi Regular', sans-serif;
+  text-align: justify;
+  letter-spacing: 4px;
+  line-height: 1.7;
+  width: 100%;
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+  -webkit-transform: rotateX(-50deg);
+          transform: rotateX(-50deg);
+}
+
+.a {
+  width: 100%;
+  position: absolute;
+}
+
+.fade {
+  top: 0;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, black), color-stop(45%, rgba(0, 0, 0, 0.5)), color-stop(65%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(180deg, black 15%, rgba(0, 0, 0, 0.5) 45%, rgba(0, 0, 0, 0) 65%);
+}
+
+.base {
+  bottom: -195%;
+  height: 200%;
+  background: black;
+}
+
+#canvas {
+  position: relative;
+  z-index: 1;
+}
+
+.replay {
+  color: #daaf41;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+  font-family: 'News Gothic Regular', sans-serif;
+  visibility: hidden;
+}
+.replay.start {
+  -webkit-animation: hide 96.2s;
+          animation: hide 96.2s;
+  visibility: visible;
+}
+.replay:hover {
+  cursor: pointer;
+}
+.replay img {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: auto;
+  margin-right: 0.5rem;
+}
+.replay img.action {
+  -webkit-animation: replay 0.5s linear;
+          animation: replay 0.5s linear;
+  -webkit-transform: rotateZ(360deg);
+          transform: rotateZ(360deg);
+}
+
+/*# sourceMappingURL=index.css.map */

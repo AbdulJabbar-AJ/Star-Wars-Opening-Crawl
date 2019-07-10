@@ -1,0 +1,54 @@
+// Colors
+$gold: #daaf41;
+// $gold: #FFFD44
+$spaceCyan: #58e3ec;
+
+//Fonts
+@font-face {
+  font-family: "News Gothic";
+  src: url("../media/fonts/News Gothic Bold.ttf");
+}
+
+@font-face {
+  font-family: "News Gothic Light";
+  src: url("../media/fonts/NewsGothicStd.otf");
+}
+
+@font-face {
+  font-family: "News Gothic Regular";
+  src: url("../media/fonts/News Gothic Regular.otf");
+}
+
+@font-face {
+  font-family: "News2";
+  src: url("../media/fonts/News Gothic Std Medium.otf");
+}
+
+@font-face {
+  font-family: "News3";
+  src: url("../media/fonts/News Gothic Condensed Regular.ttf");
+}
+
+@font-face {
+  font-family: "News Gothic Demi Regular";
+  src: url("../media/fonts/NewsGothicDemiRegular.otf");
+}
+
+@font-face {
+  font-family: "News5";
+  src: url("../media/fonts/News Gothic Condensed Bold.otf");
+}
+
+
+
+// Animations
+$ani1: 5s;
+$delay1: 1.5s;
+
+$delay2: $ani1 + $delay1 + 2.5s;
+$ani2: 15s;
+
+$delay3: $delay2 + $ani2 - 9s;
+$ani3: 140s;
+
+$delay4: $delay3 + ( $ani3 * 0.58 );
